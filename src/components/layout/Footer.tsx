@@ -29,7 +29,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <p className="font-garamond text-sm text-blush/30 italic">
-            © 2025 Grimoire. Your magic, yours alone.
+            © 2026 Grimoire. Your magic, yours alone.
           </p>
         </div>
 

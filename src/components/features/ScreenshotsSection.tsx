@@ -11,7 +11,7 @@ const screens = [
     elements: [
       { label: "☽ Waxing Gibbous", sub: "Moon in Scorpio", color: "#C9A84C" },
       { label: "Daily Protection Ritual", sub: "Due today · 8 min", color: "#C9A0DC" },
-      { label: "November Intentions", sub: "Calling in: Clarity, Abundance", color: "#7ED4A8" },
+      { label: "May Intentions", sub: "Calling in: Clarity, Abundance", color: "#7ED4A8" },
     ],
   },
   {
@@ -21,7 +21,7 @@ const screens = [
     color: "#C9A0DC",
     mockupBg: "linear-gradient(135deg, #1a0a30 0%, #0D0720 100%)",
     elements: [
-      { label: "Full Moon in Taurus", sub: "Venus Hour · Nov 15, 2025", color: "#C9A84C" },
+      { label: "Full Moon in Taurus", sub: "Venus Hour · May 12, 2026", color: "#C9A84C" },
       { label: "Intention: Release comparison", sub: "Materials: Red candle, rose petals", color: "#C9A0DC" },
       { label: "✓ Completed", sub: "Reflection logged", color: "#7ED4A8" },
     ],
@@ -34,8 +34,8 @@ const screens = [
     mockupBg: "linear-gradient(135deg, #0a1a16 0%, #0D0720 100%)",
     elements: [
       { label: "⊕ Financial Abundance", sub: "Cast: New Moon Oct · 3 signs logged", color: "#7ED4A8" },
-      { label: "Sign: Unexpected freelance offer", sub: "Nov 12 · Waxing Crescent", color: "#C9A0DC" },
-      { label: "⊕ Creative Partnership", sub: "Cast: Samhain · Simmering", color: "#C9A84C" },
+      { label: "Sign: Unexpected freelance offer", sub: "May 8 · Waxing Crescent", color: "#C9A0DC" },
+      { label: "⊕ Creative Partnership", sub: "Cast: Beltane · Simmering", color: "#C9A84C" },
     ],
   },
   {

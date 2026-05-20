@@ -109,7 +109,7 @@ export default function WhoSection() {
                   <p className="font-cinzel text-xs text-gold/60 tracking-widest uppercase mb-1">
                     Monthly Chronicle
                   </p>
-                  <p className="font-cinzel text-lg text-blush">November 2025</p>
+                  <p className="font-cinzel text-lg text-blush">May 2026</p>
                 </div>
                 <div className="text-4xl" style={{ textShadow: "0 0 15px rgba(201,168,76,0.4)" }}>
                   ☽
@@ -123,7 +123,7 @@ export default function WhoSection() {
                   { label: "New Moon Intentions", status: "complete", moon: "○" },
                   { label: "Wednesday Planetary Work", status: "complete", moon: "◑" },
                   { label: "Daily Protection Ritual", status: "active", moon: "●" },
-                  { label: "Samhain Ancestor Ritual", status: "complete", moon: "◉" },
+                  { label: "Beltane Abundance Ritual", status: "complete", moon: "◉" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-4">
                     <span className="text-gold text-xs w-4 shrink-0">{item.moon}</span>
