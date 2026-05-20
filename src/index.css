@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 249 88% 7%;
+    --foreground: 340 60% 93%;
+    --card: 249 70% 11%;
+    --card-foreground: 340 60% 93%;
+    --primary: 283 50% 74%;
+    --primary-foreground: 249 88% 7%;
+    --secondary: 249 50% 18%;
+    --secondary-foreground: 340 60% 93%;
+    --muted: 249 40% 15%;
+    --muted-foreground: 283 30% 65%;
+    --accent: 43 57% 54%;
+    --accent-foreground: 249 88% 7%;
+    --border: 249 40% 20%;
+    --ring: 283 50% 74%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-void text-blush;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+  }
+}
+
+@layer components {
+  .grimoire-card {
+    @apply rounded-2xl border border-lavender/20 bg-void-700/60 backdrop-blur-sm;
+    background: linear-gradient(135deg, rgba(33, 21, 82, 0.8) 0%, rgba(19, 10, 46, 0.9) 100%);
+  }
+
+  .gold-text {
+    @apply text-gold;
+    text-shadow: 0 0 20px rgba(201, 168, 76, 0.5);
+  }
+
+  .lavender-glow-text {
+    @apply text-lavender;
+    text-shadow: 0 0 30px rgba(201, 160, 220, 0.4);
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center gap-2 rounded-full px-8 py-4 font-cinzel font-semibold text-void;
+    background: linear-gradient(135deg, #C9A84C 0%, #dfc070 50%, #C9A84C 100%);
+    box-shadow: 0 0 30px rgba(201, 168, 76, 0.4), 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    background-size: 200% 100%;
+  }
+
+  .btn-gold:hover {
+    box-shadow: 0 0 50px rgba(201, 168, 76, 0.6), 0 8px 30px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-full border border-lavender/40 px-8 py-4 font-cinzel font-medium text-lavender;
+    transition: all 0.3s ease;
+  }
+
+  .btn-ghost:hover {
+    @apply border-lavender bg-lavender/10;
+    box-shadow: 0 0 20px rgba(201, 160, 220, 0.2);
+  }
+
+  .section-heading {
+    @apply font-cinzel text-3xl font-semibold leading-tight text-blush md:text-4xl lg:text-5xl;
+  }
+
+  .section-subheading {
+    @apply font-garamond text-lg leading-relaxed text-blush/70 md:text-xl;
+  }
+
+  .star {
+    @apply absolute rounded-full bg-blush;
+    animation: twinkle var(--duration, 3s) ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+  }
+
+  .ornament-line {
+    @apply flex items-center gap-4;
+  }
+
+  .ornament-line::before,
+  .ornament-line::after {
+    content: '';
+    @apply flex-1 border-t border-gold/30;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #C9A84C 0%, #F5D5E0 50%, #C9A84C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-lavender {
+    background: linear-gradient(135deg, #C9A0DC 0%, #F5D5E0 60%, #C9A0DC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 30px rgba(201, 168, 76, 0.3);
+  }
+
+  .glow-lavender {
+    box-shadow: 0 0 30px rgba(201, 160, 220, 0.3);
+  }
+
+  .bg-void-gradient {
+    background: radial-gradient(ellipse at center top, #211552 0%, #130a2e 40%, #0D0720 100%);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Star field animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-16px); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(201, 168, 76, 0.3); }
+  50% { box-shadow: 0 0 50px rgba(201, 168, 76, 0.6), 0 0 80px rgba(201, 168, 76, 0.2); }
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slowRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes orbitGlow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
