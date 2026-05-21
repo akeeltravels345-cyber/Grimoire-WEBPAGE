@@ -378,23 +378,31 @@ export default function FeaturesSection() {
           <div className="text-center mb-12">
             <span className="font-cinzel text-xs text-lavender/70 tracking-widest uppercase px-4 py-1.5 rounded-full border border-lavender/20 bg-lavender/08">The Journal</span>
             <h3 className="font-cinzel text-3xl md:text-4xl font-semibold text-blush mt-6 mb-4">
-              The part that makes it <span className="text-gradient-lavender">a real grimoire</span>
+              Everything that crosses the threshold — <span className="text-gradient-lavender">written down</span>
             </h3>
             <p className="font-garamond text-xl text-blush/65 max-w-2xl mx-auto leading-relaxed">
-              After every ritual, you write. How it felt. What you noticed. What shifted in the air. Your mood. Your observations. Over months, you stop scheduling your practice and start <em>reading it</em> — because it's all there.
+              Not just ritual notes. Your dreams. The encounter that stopped you in your tracks. The thought that arrived at 3am. The vision you almost dismissed. Grimoire has a category for each — because your practice doesn't only happen during spellwork.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
             {[
-              { icon: "🌙", title: "Ritual entries", desc: "Every completed ritual can have a full journal entry — notes, mood, what you felt, what you observed. Tied to the moon phase and planetary hour of the exact moment you worked.", color: "#C9A84C" },
-              { icon: "✍️", title: "Standalone entries", desc: "Dreams. Omens. Thoughts between rituals. The journal isn't just for after spellwork — it's for everything that crosses the threshold of your awareness.", color: "#C9A0DC" },
-              { icon: "💭", title: "Mood tracking", desc: "Log how each working felt — connected, peaceful, charged, mystified, grounded. Over time, patterns emerge. You start to know what conditions make your magic strongest.", color: "#7ED4A8" },
+              { icon: "📖", title: "Reflection", desc: "After every ritual, write. How it felt, what you noticed, what shifted in the air. Your mood, your body, your state. These entries are tied to the exact moon phase and planetary hour of the moment you worked.", color: "#C9A84C", label: "Post-ritual" },
+              { icon: "🌙", title: "Dream", desc: "Dreams talk louder during certain moon phases. Log them the moment you wake — Grimoire tags the phase, the date, the planetary context automatically. Patterns across months become impossible to ignore.", color: "#C9A0DC", label: "Overnight" },
+              { icon: "👁️", title: "Encounter", desc: "The crow that appeared twice. The stranger who said the thing. The feeling in a room that had no explanation. Log it before the rational mind explains it away. This is where the real record lives.", color: "#7ED4A8", label: "Synchronicity" },
+              { icon: "💡", title: "Insight", desc: "A knowing that arrived mid-meditation. A message from a card pull. A thought so clear it felt like it came from somewhere else. Insights are different from reflections — and Grimoire knows that.", color: "#94A3B8", label: "Received" },
             ].map(card => (
-              <div key={card.title} className="grimoire-card p-8 group hover:border-opacity-100 transition-all duration-300" style={{ borderColor: card.color + "20" }}>
-                <div className="text-4xl mb-5 w-14 h-14 flex items-center justify-center rounded-2xl" style={{ background: card.color + "12", border: `1px solid ${card.color}20` }}>{card.icon}</div>
-                <h4 className="font-cinzel text-lg font-semibold text-blush mb-3 group-hover:text-gradient-gold transition-all">{card.title}</h4>
-                <p className="font-garamond text-base leading-relaxed text-blush/60">{card.desc}</p>
+              <div key={card.title} className="grimoire-card p-7 group hover:border-opacity-100 transition-all duration-300" style={{ borderColor: card.color + "20" }}>
+                <div className="flex items-start gap-5">
+                  <div className="text-3xl w-13 h-13 flex items-center justify-center rounded-2xl shrink-0 p-3" style={{ background: card.color + "12", border: `1px solid ${card.color}20` }}>{card.icon}</div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <h4 className="font-cinzel text-base font-semibold text-blush">{card.title}</h4>
+                      <span className="font-cinzel text-[8px] tracking-widest uppercase px-2 py-0.5 rounded-full" style={{ color: card.color, background: card.color + "18", border: `1px solid ${card.color}25` }}>{card.label}</span>
+                    </div>
+                    <p className="font-garamond text-sm leading-relaxed text-blush/60">{card.desc}</p>
+                  </div>
+                </div>
                 <div className="mt-5 h-px transition-all duration-500 group-hover:w-full w-8 rounded-full" style={{ background: `linear-gradient(to right, ${card.color}60, transparent)` }} />
               </div>
             ))}
@@ -415,6 +423,296 @@ export default function FeaturesSection() {
                 <div className="h-px w-16 bg-gradient-to-l from-transparent to-lavender/40 self-center" />
               </div>
               <p className="mt-4 font-garamond text-sm text-blush/40 italic">That's the grimoire. That's the whole point.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* ══════════════════════════════════════════════
+            FEATURE 6 — MONTHLY INTENTION CEREMONY
+        ══════════════════════════════════════════════ */}
+        <div className="reveal-card" style={{ opacity: 0, transform: "translateY(40px)", transition: "opacity 0.8s ease, transform 0.8s ease" }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <span className="font-cinzel text-xs text-gold/60 tracking-widest uppercase px-4 py-1.5 rounded-full border border-gold/20 bg-gold/08">Monthly Intentions</span>
+              <h3 className="font-cinzel text-3xl md:text-4xl font-semibold text-blush mt-6 mb-4">
+                Begin each month as <span className="text-gradient-gold">ceremony</span>.
+              </h3>
+              <p className="font-garamond text-xl text-blush/65 leading-relaxed mb-8">
+                Every month, Grimoire guides you through a four-step intention ceremony — not a goal-setting exercise. You name what you're calling in, what you're releasing, which rituals will anchor the work, and when you'll perform them. Then the month begins.
+              </p>
+
+              <div className="space-y-3 mb-8">
+                {[
+                  { step: "01", label: "Call In", question: "What do you want this month to bring?", color: "#C9A84C", icon: "✦" },
+                  { step: "02", label: "Release", question: "What are you ready to leave behind?", color: "#C9A0DC", icon: "◌" },
+                  { step: "03", label: "Anchor", question: "Which rituals will hold this work?", color: "#7ED4A8", icon: "⊕" },
+                  { step: "04", label: "Schedule", question: "When will you begin?", color: "#94A3B8", icon: "☽" },
+                ].map(step => (
+                  <div key={step.step} className="flex items-center gap-5 grimoire-card p-4" style={{ borderColor: step.color + "20" }}>
+                    <span className="font-cinzel text-[10px] text-blush/25 tracking-widest w-6 shrink-0">{step.step}</span>
+                    <span className="text-base shrink-0" style={{ color: step.color }}>{step.icon}</span>
+                    <div className="flex-1">
+                      <span className="font-cinzel text-xs font-semibold tracking-wider" style={{ color: step.color }}>{step.label}</span>
+                      <p className="font-garamond text-sm text-blush/55 italic mt-0.5">"{step.question}"</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <p className="font-garamond text-base text-blush/50 italic leading-relaxed">
+                When it's done, your intentions are set, your rituals are scheduled, and your month has intention baked into it from the first day.
+              </p>
+            </div>
+
+            {/* Mock monthly card */}
+            <div className="grimoire-card p-8 relative overflow-hidden" style={{ borderColor: "rgba(201,168,76,0.2)" }}>
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <p className="font-cinzel text-[10px] text-gold/50 tracking-widest uppercase mb-1">Monthly Ceremony</p>
+                  <p className="font-cinzel text-xl text-blush">June 2026</p>
+                </div>
+                <div
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl"
+                  style={{ background: "rgba(201,168,76,0.12)", border: "1px solid rgba(201,168,76,0.2)" }}
+                >
+                  ☽
+                </div>
+              </div>
+
+              <div className="space-y-4 mb-6">
+                <div className="rounded-xl p-4 border border-gold/15" style={{ background: "rgba(201,168,76,0.07)" }}>
+                  <p className="font-cinzel text-[9px] tracking-widest text-gold/50 uppercase mb-1.5">Calling In</p>
+                  <p className="font-garamond text-sm text-blush/75 italic leading-relaxed">"Financial stability that lets me create freely. Recognition for the work. Space to breathe."</p>
+                </div>
+                <div className="rounded-xl p-4 border border-lavender/15" style={{ background: "rgba(201,160,220,0.06)" }}>
+                  <p className="font-cinzel text-[9px] tracking-widest text-lavender/50 uppercase mb-1.5">Releasing</p>
+                  <p className="font-garamond text-sm text-blush/75 italic leading-relaxed">"Comparison. The need to justify my pace. Friendships that drain rather than nourish."</p>
+                </div>
+                <div className="rounded-xl p-4 border border-sage/15" style={{ background: "rgba(126,212,168,0.05)" }}>
+                  <p className="font-cinzel text-[9px] tracking-widest text-sage/50 uppercase mb-1.5">Anchoring Rituals</p>
+                  <div className="space-y-1.5 mt-1">
+                    {["New Moon Abundance Ritual", "Friday Venus Work (×3)", "Daily Clarity Practice"].map(r => (
+                      <div key={r} className="flex items-center gap-2">
+                        <span className="text-sage text-xs">✦</span>
+                        <p className="font-garamond text-xs text-blush/60">{r}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="h-1 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.06)" }}>
+                <div className="h-full rounded-full" style={{ width: "25%", background: "linear-gradient(to right, #C9A84C, #C9A0DC)" }} />
+              </div>
+              <p className="font-cinzel text-[9px] text-blush/25 tracking-wider mt-2">3 of 12 rituals complete</p>
+
+              <div className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full pointer-events-none" style={{ background: "radial-gradient(ellipse, rgba(201,168,76,0.10) 0%, transparent 70%)" }} />
+            </div>
+          </div>
+        </div>
+
+        {/* ══════════════════════════════════════════════
+            FEATURE 7 — GRIMOIRE LIBRARY
+        ══════════════════════════════════════════════ */}
+        <div className="reveal-card" style={{ opacity: 0, transform: "translateY(40px)", transition: "opacity 0.8s ease, transform 0.8s ease" }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Mock library */}
+            <div className="grimoire-card p-8 relative overflow-hidden order-2 lg:order-1" style={{ borderColor: "rgba(201,168,76,0.15)" }}>
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <p className="font-cinzel text-[10px] text-gold/50 tracking-widest uppercase mb-1">Grimoire Library</p>
+                  <p className="font-cinzel text-base text-blush">Your Book of Shadows</p>
+                </div>
+                <div className="text-3xl" style={{ textShadow: "0 0 15px rgba(201,168,76,0.4)" }}>📖</div>
+              </div>
+
+              <div className="mb-4 flex flex-wrap gap-2">
+                {["All", "Protection", "Love", "Money Work", "Divination", "Cleansing"].map((tag, i) => (
+                  <span
+                    key={tag}
+                    className="font-cinzel text-[9px] tracking-wider px-3 py-1 rounded-full"
+                    style={{
+                      color: i === 0 ? "#C9A84C" : "#F5D5E050",
+                      background: i === 0 ? "rgba(201,168,76,0.15)" : "rgba(255,255,255,0.04)",
+                      border: `1px solid ${i === 0 ? "rgba(201,168,76,0.3)" : "rgba(255,255,255,0.08)"}`,
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="space-y-3">
+                {[
+                  { name: "Protection Cord Spell", tags: ["Warding", "Mars Hour"], moon: "Waning", color: "#EF4444" },
+                  { name: "Rose Water Clarity Ritual", tags: ["Clarity", "Water"], moon: "New Moon", color: "#C9A0DC" },
+                  { name: "Black Salt Boundary Work", tags: ["Banishing", "Saturn"], moon: "Waning", color: "#64748B" },
+                  { name: "Honey Jar — Sweetening", tags: ["Love", "Venus Day"], moon: "Waxing", color: "#EC4899" },
+                  { name: "Mirror Scrying Practice", tags: ["Divination", "Moon Hour"], moon: "Full", color: "#94A3B8" },
+                ].map((spell, i) => (
+                  <div key={i} className="flex items-center gap-4 rounded-xl p-3.5 border border-white/05" style={{ background: "rgba(255,255,255,0.02)" }}>
+                    <div className="w-1 h-10 rounded-full shrink-0" style={{ background: spell.color }} />
+                    <div className="flex-1 min-w-0">
+                      <p className="font-cinzel text-xs font-semibold text-blush truncate">{spell.name}</p>
+                      <div className="flex gap-2 mt-1">
+                        {spell.tags.map(tag => (
+                          <span key={tag} className="font-cinzel text-[8px] text-blush/30 tracking-wider">{tag}</span>
+                        ))}
+                      </div>
+                    </div>
+                    <span className="font-cinzel text-[8px] text-blush/25 tracking-wider shrink-0">{spell.moon}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-5 pt-4 border-t border-white/05 flex justify-between items-center">
+                <span className="font-cinzel text-[9px] text-blush/25 tracking-wider">23 spells · 6 categories</span>
+                <span className="font-cinzel text-[9px] text-gold/40 tracking-wider">+ New Spell</span>
+              </div>
+
+              <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full pointer-events-none" style={{ background: "radial-gradient(ellipse, rgba(201,168,76,0.08) 0%, transparent 70%)" }} />
+            </div>
+
+            {/* Copy */}
+            <div className="order-1 lg:order-2">
+              <span className="font-cinzel text-xs text-gold/60 tracking-widest uppercase px-4 py-1.5 rounded-full border border-gold/20 bg-gold/08">The Library</span>
+              <h3 className="font-cinzel text-3xl md:text-4xl font-semibold text-blush mt-6 mb-4">
+                Your Book of Shadows — <span className="text-gradient-gold">always in your pocket</span>
+              </h3>
+              <p className="font-garamond text-xl text-blush/65 leading-relaxed mb-8">
+                Every spell you write, every working you develop, every ritual you adapt — stored in your own private library. Searchable. Tagged by element, planet, moon phase, and category. Your craft, codified.
+              </p>
+
+              <div className="space-y-4">
+                {[
+                  { icon: "🏷️", title: "Your tags, your system", desc: "Category, moon phase, element, tradition, difficulty. You decide how it's organized. No one else's taxonomy forced on your practice." },
+                  { icon: "🔍", title: "Searchable across everything", desc: "Find any spell by name, category, ingredient, or moon phase. Your library is always one tap from wherever you are in the app." },
+                  { icon: "🔒", title: "Completely private", desc: "No syncing to a server. No sharing unless you choose. Your Book of Shadows lives on your device — and nowhere else." },
+                  { icon: "📋", title: "Written in your words", desc: "No templated spells. No AI-generated content. Everything in the library is exactly as you wrote it, in your own voice, your own format." },
+                ].map(item => (
+                  <div key={item.title} className="flex items-start gap-4">
+                    <span className="text-xl shrink-0 mt-0.5">{item.icon}</span>
+                    <div>
+                      <p className="font-cinzel text-sm font-semibold text-gold mb-1">{item.title}</p>
+                      <p className="font-garamond text-base text-blush/60 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ══════════════════════════════════════════════
+            FEATURE 8 — SACRED NOTIFICATIONS
+        ══════════════════════════════════════════════ */}
+        <div className="reveal-card" style={{ opacity: 0, transform: "translateY(40px)", transition: "opacity 0.8s ease, transform 0.8s ease" }}>
+          <div className="text-center mb-12">
+            <span className="font-cinzel text-xs text-lavender/70 tracking-widest uppercase px-4 py-1.5 rounded-full border border-lavender/20 bg-lavender/08">Sacred Reminders</span>
+            <h3 className="font-cinzel text-3xl md:text-4xl font-semibold text-blush mt-6 mb-4">
+              The sky doesn't wait. <span className="text-gradient-lavender">Neither should you</span>.
+            </h3>
+            <p className="font-garamond text-xl text-blush/65 max-w-2xl mx-auto leading-relaxed">
+              Grimoire notifies you before your rituals, before the moon shifts, and before rare celestial events that serious practitioners don't miss. All local. All private. Nothing on a server.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            {/* Left: Ritual reminders */}
+            <div>
+              <p className="font-cinzel text-xs text-gold/50 tracking-widest uppercase mb-5">Ritual Reminders</p>
+              <div className="space-y-4">
+                {/* 3-day reminder */}
+                <div
+                  className="grimoire-card p-5"
+                  style={{ borderColor: "rgba(201,168,76,0.25)", background: "linear-gradient(135deg, rgba(201,168,76,0.06) 0%, rgba(13,7,32,0.8) 100%)" }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0" style={{ background: "rgba(201,168,76,0.15)", border: "1px solid rgba(201,168,76,0.25)" }}>🔮</div>
+                    <div>
+                      <p className="font-cinzel text-xs text-gold tracking-wider mb-1.5">3 DAYS BEFORE</p>
+                      <div className="rounded-xl px-4 py-3 mb-2" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                        <p className="font-garamond text-sm text-blush/80 italic">"🔮 Full Moon Abundance Ritual is in 3 days — prepare your space"</p>
+                      </div>
+                      <p className="font-garamond text-xs text-blush/40 leading-relaxed">Time to gather your materials. Consecrate your tools. Set the container before the peak.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Day-of reminder */}
+                <div
+                  className="grimoire-card p-5"
+                  style={{ borderColor: "rgba(201,160,220,0.25)", background: "linear-gradient(135deg, rgba(201,160,220,0.06) 0%, rgba(13,7,32,0.8) 100%)" }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0" style={{ background: "rgba(201,160,220,0.15)", border: "1px solid rgba(201,160,220,0.25)" }}>✨</div>
+                    <div>
+                      <p className="font-cinzel text-xs text-lavender tracking-wider mb-1.5">DAY OF</p>
+                      <div className="rounded-xl px-4 py-3 mb-2" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                        <p className="font-garamond text-sm text-blush/80 italic">"✨ Today is the day — Full Moon Abundance Ritual is scheduled for tonight"</p>
+                      </div>
+                      <p className="font-garamond text-xs text-blush/40 leading-relaxed">The ritual fires at your scheduled time. You don't have to remember. Grimoire holds that for you.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Celestial events */}
+            <div>
+              <p className="font-cinzel text-xs text-lavender/50 tracking-widest uppercase mb-5">Celestial Event Alerts</p>
+              <div className="space-y-4 mb-5">
+                {[
+                  {
+                    type: "Annular Solar Eclipse",
+                    date: "February 17, 2026",
+                    coverage: "Antarctica, South America",
+                    emoji: "🌑",
+                    color: "#C9A84C",
+                    note: "Total darkness at midday. New Moon on steroids. Set intentions that are meant to last years.",
+                  },
+                  {
+                    type: "Penumbral Lunar Eclipse",
+                    date: "March 3, 2026",
+                    coverage: "Americas, Europe, Africa",
+                    emoji: "🌕",
+                    color: "#C9A0DC",
+                    note: "The shadow passes over the Full Moon. Release what's been lingering since last eclipse season.",
+                  },
+                  {
+                    type: "Total Solar Eclipse",
+                    date: "August 12, 2026",
+                    coverage: "Europe, North Africa, Arctic",
+                    emoji: "🌑",
+                    color: "#EF4444",
+                    note: "The rarest working window of the year. Practitioners who use it well feel it for months.",
+                  },
+                ].map((event, i) => (
+                  <div key={i} className="grimoire-card p-5" style={{ borderColor: event.color + "25" }}>
+                    <div className="flex items-start gap-4">
+                      <span className="text-2xl shrink-0" style={{ textShadow: `0 0 15px ${event.color}60` }}>{event.emoji}</span>
+                      <div className="flex-1">
+                        <div className="flex items-start justify-between gap-2 mb-1">
+                          <p className="font-cinzel text-xs font-semibold" style={{ color: event.color }}>{event.type}</p>
+                          <span className="font-cinzel text-[8px] text-blush/25 tracking-wider shrink-0">{event.date}</span>
+                        </div>
+                        <p className="font-cinzel text-[8px] text-blush/30 tracking-wider mb-2">{event.coverage}</p>
+                        <p className="font-garamond text-xs text-blush/55 italic leading-relaxed">{event.note}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="rounded-2xl p-5 border border-white/08" style={{ background: "rgba(201,160,220,0.05)" }}>
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-lavender text-sm">🔔</span>
+                  <p className="font-cinzel text-xs text-lavender/70 tracking-wider">Always local. Always private.</p>
+                </div>
+                <p className="font-garamond text-sm text-blush/50 leading-relaxed">
+                  Grimoire notifications never touch a server. They live on your device, fire on your schedule, and belong entirely to you. No data. No tracking. Just the reminder to show up for your practice.
+                </p>
+              </div>
             </div>
           </div>
         </div>
