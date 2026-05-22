@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import heroBg from "@/assets/hero-bg.jpg";
-import phoneMockup from "@/assets/phone-mockup.png";
+import phoneMockup from "@/assets/phone-mockup-app.png";
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
